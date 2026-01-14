@@ -1,0 +1,8 @@
+📹 Como adicionar o vídeo de destaque:
+
+1. Coloque seu vídeo nesta pasta
+2. Renomeie para: destaque.mp4
+3. Formatos aceitos: MP4, WebM, MOV
+
+Dica: Comprima o vídeo para web usando HandBrake ou similar
+Recomendado: 1080p, 30fps, bitrate 5-8 Mbps
