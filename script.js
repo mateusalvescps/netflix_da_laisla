@@ -86,33 +86,6 @@ function switchScreen(screenId) {
     document.getElementById(screenId).classList.add('active');
 }
 
-// Login
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    switchScreen('intro-screen');
-    playIntroVideo();
-});
-
-// Vídeo de Intro
-function playIntroVideo() {
-    const video = document.getElementById('intro-video');
-    
-    // Se não houver vídeo de intro, pula direto para perfis
-    video.addEventListener('error', () => {
-        switchScreen('profiles-screen');
-    });
-    
-    // Quando terminar o vídeo, vai para perfis
-    video.addEventListener('ended', () => {
-        switchScreen('profiles-screen');
-    });
-    
-    // Botão de pular
-    document.getElementById('skip-intro').addEventListener('click', () => {
-        switchScreen('profiles-screen');
-    });
-}
-
 // Seleção de Perfis
 document.querySelectorAll('.profile').forEach(profile => {
     profile.addEventListener('click', () => {
