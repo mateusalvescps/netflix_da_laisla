@@ -1,135 +1,160 @@
-# 🎬 Netflix da Laisla
+# 🎬 JAPAFLIX
 
-Clone simplificado do Netflix com sistema de perfis personalizados.
+Clone completo do Netflix desenvolvido com React, Vite e Tailwind CSS.
 
-## 🚀 Como Funciona
+![Japaflix](https://img.shields.io/badge/Japaflix-2026-red)
+![React](https://img.shields.io/badge/React-18.3-blue)
+![Vite](https://img.shields.io/badge/Vite-5.0-purple)
 
-### Fluxo do Aplicativo
+## 🚀 Características
 
-1. **Login** → Tela de entrada (qualquer email/senha)
-2. **Vídeo Intro** → Roda um vídeo de introdução (pode ser pulado)
-3. **Seleção de Perfis** → 4 perfis disponíveis (Laisla, Mateus, Kids, Convidado)
-4. **Catálogo** → Vídeo principal + categorias de filmes/séries
+- ✅ Interface moderna inspirada no Netflix
+- ✅ Sistema de autenticação completo
+- ✅ Navegação por categorias (Filmes, Séries, Populares)
+- ✅ Busca de conteúdo
+- ✅ Player de vídeo integrado
+- ✅ Histórico de visualização
+- ✅ Design responsivo
+- ✅ Animações suaves com Framer Motion
+- ✅ Integração com TMDB API
 
-### 📁 Estrutura de Pastas
+## 📋 Pré-requisitos
 
-```
-assets/
-├── images/
-│   ├── laisla/
-│   │   ├── favoritos/    → Imagens para "Favoritos da Laisla"
-│   │   ├── series/       → Imagens para "Séries em Alta"
-│   │   └── filmes/       → Imagens para "Filmes Recomendados"
-│   ├── mateus/
-│   │   ├── favoritos/
-│   │   ├── acao/
-│   │   └── documentarios/
-│   ├── kids/
-│   │   ├── desenhos/
-│   │   └── filmes/
-│   └── guest/
-│       ├── populares/
-│       └── lancamentos/
-├── videos/
-│   ├── laisla/
-│   │   └── main.mp4      → Vídeo principal do perfil Laisla
-│   ├── mateus/
-│   │   └── main.mp4
-│   ├── kids/
-│   │   └── main.mp4
-│   └── guest/
-│       └── main.mp4
-└── profiles/
-    ├── laisla.png        → Foto do perfil Laisla
-    ├── mateus.png
-    ├── kids.png
-    └── guest.png
-```
+- Node.js 18+ 
+- NPM ou Yarn
+- Conta no TMDB (The Movie Database) para obter API Key
 
-## ✨ Como Adicionar Conteúdo
+## 🔧 Instalação
 
-### Adicionar Imagens de Filmes/Séries
+### 1. Clone o repositório
 
-1. Coloque as imagens (JPG ou PNG) nas pastas correspondentes
-2. Nomeie como: `img1.jpg`, `img2.jpg`, `img3.jpg`, etc.
-3. Cada imagem adicionada aparecerá automaticamente na categoria
-
-**Exemplo:**
 ```bash
-# Para adicionar favoritos da Laisla
-assets/images/laisla/favoritos/img1.jpg
-assets/images/laisla/favoritos/img2.jpg
-assets/images/laisla/favoritos/img3.jpg
+git clone https://github.com/mateusalvescps/netflix_da_laisla.git
+cd netflix_da_laisla
 ```
 
-### Adicionar Vídeo Principal de um Perfil
+### 2. Instale as dependências
 
-1. Coloque o vídeo MP4 na pasta do perfil
-2. Nomeie como `main.mp4`
-
-**Exemplo:**
 ```bash
-# Vídeo principal da Laisla
-assets/videos/laisla/main.mp4
+npm install
 ```
 
-### Adicionar Foto de Perfil
+### 3. Configure as variáveis de ambiente
 
-1. Coloque a imagem na pasta `assets/profiles/`
-2. Use PNG para melhor qualidade
+Crie um arquivo `.env` na raiz do projeto:
 
-**Exemplo:**
+```env
+VITE_API_URL=http://localhost:5000/api/v1
+```
+
+### 4. Execute o projeto
+
 ```bash
-assets/profiles/laisla.png
+npm run dev
 ```
 
-### Adicionar Vídeo de Intro (Opcional)
+O projeto estará disponível em `http://localhost:5173`
 
-Coloque um vídeo MP4 chamado `intro.mp4` em:
+## 🏗️ Build para Produção
+
 ```bash
-assets/intro.mp4
+npm run build
 ```
 
-## 🎨 Personalização
+Os arquivos otimizados estarão na pasta `dist/`
 
-### Adicionar Nova Categoria
+## 📦 Deploy no Netlify
 
-Edite o arquivo `script.js` e adicione na seção `profilesData`:
+O projeto está configurado para deploy automático no Netlify:
 
-```javascript
-{
-    title: 'Nome da Nova Categoria',
-    folder: 'assets/images/perfil/nova-pasta'
-}
+1. Conecte seu repositório GitHub ao Netlify
+2. Configure o build command: `npm run build`
+3. Configure o publish directory: `dist`
+4. Adicione as variáveis de ambiente necessárias
+
+## 🎨 Tecnologias Utilizadas
+
+- **React 18.3** - Biblioteca JavaScript para UI
+- **Vite** - Build tool e dev server
+- **Tailwind CSS** - Framework CSS utility-first
+- **React Router** - Navegação
+- **Zustand** - Gerenciamento de estado
+- **Axios** - Cliente HTTP
+- **Framer Motion** - Animações
+- **React Hot Toast** - Notificações
+- **React Player** - Player de vídeo
+- **Lucide React** - Ícones
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Card.jsx
+│   └── ...
+├── pages/              # Páginas da aplicação
+│   ├── home/
+│   ├── LoginPage.jsx
+│   ├── SignUpPage.jsx
+│   └── ...
+├── store/              # Gerenciamento de estado
+│   ├── auth.store.js
+│   └── content.store.js
+├── utils/              # Utilitários
+│   └── constants.js
+├── hooks/              # Custom hooks
+├── App.jsx             # Componente principal
+└── main.jsx            # Entry point
 ```
 
-### Mudar Cores
+## 🎯 Funcionalidades
 
-Edite o arquivo `styles.css` e procure por:
-- `#e50914` → Cor vermelha principal
-- `#141414` → Cor de fundo
-- `#fff` → Cor branca
+### Autenticação
+- Cadastro de usuários
+- Login/Logout
+- Recuperação de senha
+- Verificação de email
 
-## 🌐 Deploy no Netlify
+### Conteúdo
+- Filmes populares e em alta
+- Séries de TV
+- Busca por título
+- Detalhes do conteúdo
+- Trailers e vídeos
+- Conteúdo similar
 
-1. Faça commit e push no GitHub
-2. O Netlify detecta automaticamente e faz deploy
-3. Acesse seu site em: `https://seu-site.netlify.app`
+### Personalização
+- Histórico de busca
+- Preferências do usuário
+- Interface adaptável
 
-## 📝 Notas
+## 🌐 Variáveis de Ambiente
 
-- Se não houver imagens nas pastas, usa placeholders automáticos
-- Se não houver vídeos, usa imagens de fundo
-- Totalmente responsivo (funciona em celular e tablet)
-- Sem necessidade de backend ou banco de dados
+```env
+VITE_API_URL=sua_api_url_aqui
+```
 
-## 🎯 Próximos Passos
+## 📝 Scripts Disponíveis
 
-1. Adicione suas imagens favoritas nas pastas
-2. Adicione vídeos principais para cada perfil
-3. Personalize as fotos de perfil
-4. Faça commit e veja online!
+- `npm run dev` - Inicia servidor de desenvolvimento
+- `npm run build` - Build para produção
+- `npm run preview` - Preview do build
+- `npm run lint` - Executa o linter
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## 📄 Licença
+
+Este projeto é livre para uso pessoal e educacional.
+
+## 🎬 Preview
+
+Acesse: [https://japaflix.netlify.app](https://seu-site.netlify.app)
 
 ---
 
-Desenvolvido com ❤️ para a família
+Desenvolvido com ❤️ por [Mateus Alves](https://github.com/mateusalvescps)
